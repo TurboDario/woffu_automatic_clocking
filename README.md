@@ -1,5 +1,17 @@
 # Woffu automatic clocking
- Automating clocking for woffu systems
+Automating clocking for woffu systems
+
+---
+
+# Features
+
+Only linux systems are supported.
+
+Clock in and out automatically for woffu systems.
+
+Clocking take a random wait between 0" and 240" (4 minutes) and calendar can be changed by crontab.
+
+Only clock in when the day is in "green" color, so it won't clock in if is holiday, day off, etc.
 
 ---
 
