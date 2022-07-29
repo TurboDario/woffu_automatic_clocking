@@ -1,21 +1,18 @@
 # woffu_automatic_clocking
  Automating clocking for woffu systems
 
-# User and password
- Modify user and pass in password.json
+# Configure server
 
-# Entering oracle vm by ssh
+## Install github
 
-Configure ssh with .cer file, this is explained in oracle cloud.
-Configure putty using the Public IP from oracle cloud dashboard.
+## Pull project
 
-username: opc
-pass: whatever you set
+## Download and locating webdriver
 
-# Updating project
+## Configure project for your own use
 
-Once in oracle machine by ssh, do a pull request:
+### Set credentials
 
-- pull
+Modify user and pass in password.json
 
-Remember to add your credentials and updating the crontab info to hte crontab file.
+### Set crontab

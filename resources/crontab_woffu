@@ -1,2 +1,0 @@
-57 7 * * 1-5 /bin/bash /home/opc/timenet/cron_clocking.sh
-00 15 * * 1-5 /bin/bash /home/opc/timenet/cron_clocking.sh
