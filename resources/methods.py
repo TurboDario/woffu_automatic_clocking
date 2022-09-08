@@ -16,7 +16,7 @@ with open('resources/config.json') as file:
 if platform == "linux" or platform == "linux2":
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(executable_path='usr/local/bin/chromedriver', options=options)
+    driver = webdriver.Chrome(executable_path='usr/local/bin/chromedriver', options=options)
 elif platform == "win32":
     driver = webdriver.Chrome('driver/chromedriver_'+data['chromeDriverVersion'])
 
