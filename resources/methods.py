@@ -16,7 +16,7 @@ with open('resources/config.json') as file:
 if platform == "linux" or platform == "linux2":
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(executable_path='/bin/geckodriver', options=options)
+    driver = webdriver.Firefox(executable_path='./driver/geckodriver', options=options)
 elif platform == "win32":
     driver = webdriver.Chrome('driver/chromedriver_'+data['chromeDriverVersion'])
 
