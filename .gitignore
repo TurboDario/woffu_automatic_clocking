@@ -3,3 +3,6 @@
 venv
 v.env*
 venv*
+
+# geckodriver log
+geckodriver.log
