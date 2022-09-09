@@ -16,8 +16,9 @@ with open('resources/config.json') as file:
 if platform == "linux" or platform == "linux2":
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(executable_path='/usr/local/bin/geckodriver', options=options)
+    driver = webdriver.Firefox(executable_path='usr/local/bin/chromedriver', options=options)
 elif platform == "win32":
+    options = webdriver.ChromeOptions()
     driver = webdriver.Chrome('driver/chromedriver_'+data['chromeDriverVersion'])
 
 driver.get(locator.url)
@@ -28,7 +29,7 @@ def clocking():
     """
     action = "clocking"
     print("Starting "+action+" at "+__time_now())
-    __random_wait()
+    # __random_wait()
     login()
     iframe = WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.XPATH, locator.iframe))).get_attribute('src')
@@ -69,12 +70,11 @@ def __enter_credential(key: str, box_path: str, button_path):
             button_path (_type_):
         """
         try:
-            box = WebDriverWait(driver, 5).until(
-                    EC.element_to_be_clickable((By.XPATH, box_path)))
+            box = WebDriverWait(driver, 15).until(
+                    EC.presence_of_element_located((By.XPATH, box_path)))
             box.click()
-            box.send_keys(key)
-
-            button = WebDriverWait(driver, 5).until(
+            box.send_keys("caquita")
+            button = WebDriverWait(driver, 15).until(
                     EC.element_to_be_clickable((By.XPATH, button_path)))
             button.click()
         except Exception as e:
@@ -86,7 +86,7 @@ def click_button():
     This function is used to click the button to clock in.
     """
     try:
-        button_click = WebDriverWait(driver, 5).until(
+        button_click = WebDriverWait(driver, 15).until(
                 EC.presence_of_element_located((By.XPATH, locator.button_clocking)))
         button_click.click()
     except Exception as e:
