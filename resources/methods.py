@@ -16,7 +16,7 @@ with open('resources/config.json') as file:
 if platform == "linux" or platform == "linux2":
     options = Options()
     options.headless = True
-    driver = webdriver.Firefox(executable_path='usr/local/bin/chromedriver', options=options)
+    driver = webdriver.Firefox(executable_path='/usr/local/bin/geckodriver', options=options)
 elif platform == "win32":
     options = webdriver.ChromeOptions()
     driver = webdriver.Chrome('driver/chromedriver_'+data['chromeDriverVersion'])
@@ -41,8 +41,6 @@ def clocking():
             print(action+" at "+__time_now())
         except Exception as e:
             print("Error while "+action+" because "+str(e))
-        finally:
-            print(action+" at "+__time_now())
     else:
         print("Hoy no se trabaja champion xD")
 
@@ -73,7 +71,7 @@ def __enter_credential(key: str, box_path: str, button_path):
             box = WebDriverWait(driver, 15).until(
                     EC.presence_of_element_located((By.XPATH, box_path)))
             box.click()
-            box.send_keys("caquita")
+            box.send_keys(key)
             button = WebDriverWait(driver, 15).until(
                     EC.element_to_be_clickable((By.XPATH, button_path)))
             button.click()

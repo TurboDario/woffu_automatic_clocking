@@ -1,2 +1,2 @@
-57 7 * * 1-5 /bin/bash /home/opc/timenet/clocking_job.sh
-00 15 * * 1-5 /bin/bash /home/opc/timenet/clocking_job.sh
+57 5 * * 1-5 /bin/bash /home/opc/woffu_automatic_clocking/clocking_job.sh
+00 13 * * 1-5 /bin/bash /home/opc/woffu_automatic_clocking/clocking_job.sh

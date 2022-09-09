@@ -1,3 +1,3 @@
 #!/bin/sh
 sudo pkill -9 firefox
-python /home/opc/timenet/clocking.py &> log
+python3.8 /home/opc/woffu_automatic_clocking/clocking.py &> log
